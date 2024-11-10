@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Layout with Growing Sections</title>
+    <style>
+        * {
+            color: white;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0 0 3px 0;
+            font-weight: bold;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial;
+            gap: 1rem;
+        }
+
+        .header, .footer {
+            background-color: #1e90ff;
+            height: 50px;
+            border-radius: 0.5rem;
+            flex-shrink: 0; /* Prevent header/footer from shrinking */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 5px 5px #002eb7;
+        }
+
+        .footer {
+            background-color: #4169e1;
+        }
+
+        .content {
+            flex: 1; /* Allow content to grow to fill remaining space */
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .main {
+            background-color: #3cb371;
+            border-radius: 0.5rem;
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem;
+            box-shadow: 5px 5px #2f8d59;
+        }
+
+        .item {
+            background-color: #2f8d59;
+            border-radius: 0.5rem;
+            width: 22%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 5px 5px rgb(0, 68, 25);
+            
+        }
+
+        .sidebar {
+            background-color: #ff6347;
+            border-radius: 0.5rem;
+            width: 300px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 5px 5px rgb(231, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Header</div>
+    <div class="content">
+        <div class="main">
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+            <div class="item">item</div>
+        </div>
+        <div class="sidebar">Sidebar</div>
+    </div>
+    <div class="footer">Footer</div>
+</body>
+</html>
